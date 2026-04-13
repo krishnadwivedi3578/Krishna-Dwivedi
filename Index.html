@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krishna Dwivedi Portfolio</title>
+  <meta name="description" content="Portfolio of Krishna Dwivedi, BTech CSE Data Science student at ITM University Gwalior." />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9; --color-surface-offset: #f3f0ec; --color-border: #d4d1ca; --color-text: #28251d; --color-text-muted: #66645e; --color-text-faint: #93918a; --color-text-inverse: #f9f8f4; --color-primary: #01696f; --color-primary-hover: #0c4e54; --color-primary-highlight: #cedcd8;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.9rem; --radius-xl: 1.2rem; --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(26,24,18,.06); --shadow-md: 0 10px 30px rgba(26,24,18,.08);
+      --font-display: 'Cabinet Grotesk', 'Inter', sans-serif; --font-body: 'Satoshi', 'Inter', sans-serif;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      --content-default: 1120px;
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #242320; --color-border: #393836; --color-text: #ece8df; --color-text-muted: #b7b2a8; --color-text-faint: #7c786f; --color-text-inverse: #2b2a28; --color-primary: #4f98a3; --color-primary-hover: #227f8b; --color-primary-highlight: #313b3b; --shadow-sm: 0 1px 2px rgba(0,0,0,.25); --shadow-md: 0 14px 32px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme]) {
+        --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d; --color-surface-offset: #242320; --color-border: #393836; --color-text: #ece8df; --color-text-muted: #b7b2a8; --color-text-faint: #7c786f; --color-text-inverse: #2b2a28; --color-primary: #4f98a3; --color-primary-hover: #227f8b; --color-primary-highlight: #313b3b;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { min-height: 100dvh; line-height: 1.65; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); background: radial-gradient(circle at top right, var(--color-primary-highlight), transparent 28%), var(--color-bg); }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: none; background: none; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    .skip-link { position: absolute; left: var(--space-4); top: -3rem; background: var(--color-primary); color: var(--color-text-inverse); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); z-index: 1000; }
+    .skip-link:focus { top: var(--space-4); }
+    .container { width: min(calc(100% - 2rem), var(--content-default)); margin-inline: auto; }
+    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--color-bg) 82%, transparent); border-bottom: 1px solid rgba(128,128,128,.12); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) 0; gap: var(--space-4); }
+    .brand { display: flex; align-items: center; gap: var(--space-3); font-weight: 700; letter-spacing: .02em; }
+    .brand svg { width: 34px; height: 34px; color: var(--color-primary); }
+    .nav-links { display: flex; gap: var(--space-5); flex-wrap: wrap; align-items: center; }
+    .nav-links a { font-size: var(--text-sm); color: var(--color-text-muted); }
+    .nav-links a:hover { color: var(--color-text); }
+    .theme-toggle { width: 44px; height: 44px; border-radius: var(--radius-full); display: grid; place-items: center; background: var(--color-surface); border: 1px solid rgba(128,128,128,.14); box-shadow: var(--shadow-sm); }
+    section { padding-block: clamp(var(--space-12), 8vw, var(--space-20)); }
+    .hero { padding-top: var(--space-16); }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr .9fr; gap: var(--space-8); align-items: stretch; }
+    .eyebrow { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); background: var(--color-primary-highlight); color: var(--color-primary); font-size: var(--text-sm); margin-bottom: var(--space-5); }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; letter-spacing: -0.03em; }
+    h1 { font-size: var(--text-2xl); max-width: 12ch; }
+    h2 { font-size: var(--text-xl); margin-bottom: var(--space-4); }
+    h3 { font-size: var(--text-lg); }
+    .hero p { max-width: 62ch; color: var(--color-text-muted); margin-top: var(--space-4); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
+    .btn { min-height: 44px; padding: 0.9rem 1.15rem; border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; gap: .55rem; transition: transform var(--transition-interactive), background var(--transition-interactive), color var(--transition-interactive), border-color var(--transition-interactive); }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary { background: var(--color-surface); border: 1px solid rgba(128,128,128,.15); }
+    .hero-card, .card { background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface)); border: 1px solid rgba(128,128,128,.12); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); }
+    .hero-card { padding: var(--space-8); display: grid; gap: var(--space-6); }
+    .stats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-4); }
+    .stat { padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-surface-offset); }
+    .stat strong { display: block; font-size: var(--text-lg); font-family: var(--font-display); }
+    .stat span { color: var(--color-text-muted); font-size: var(--text-sm); }
+    .meta-list { display: grid; gap: var(--space-3); }
+    .meta-item { display: flex; gap: var(--space-3); align-items: flex-start; color: var(--color-text-muted); }
+    .meta-item strong { color: var(--color-text); min-width: 88px; }
+    .section-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-6); }
+    .span-6 { grid-column: span 6; }
+    .span-4 { grid-column: span 4; }
+    .span-8 { grid-column: span 8; }
+    .span-12 { grid-column: span 12; }
+    .card { padding: var(--space-6); }
+    .list { display: grid; gap: var(--space-3); color: var(--color-text-muted); }
+    .badge-wrap { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .badge { padding: .7rem .95rem; border-radius: var(--radius-full); background: var(--color-surface-offset); border: 1px solid rgba(128,128,128,.1); font-size: var(--text-sm); }
+    .project { display: grid; gap: var(--space-3); }
+    .project p, .muted { color: var(--color-text-muted); }
+    .project .stack { font-size: var(--text-sm); color: var(--color-primary); font-weight: 700; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-5); }
+    .contact-box { display: grid; gap: var(--space-3); }
+    .contact-link { padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-surface-offset); border: 1px solid rgba(128,128,128,.1); }
+    footer { padding: var(--space-8) 0 var(--space-10); color: var(--color-text-muted); font-size: var(--text-sm); }
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 920px) {
+      .hero-grid, .project-grid { grid-template-columns: 1fr; }
+      .span-6, .span-4, .span-8 { grid-column: span 12; }
+      .nav-links { display: none; }
+      h1 { max-width: 100%; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(calc(100% - 1.25rem), var(--content-default)); }
+      .hero-card, .card { padding: var(--space-5); }
+      .stats { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Krishna Dwivedi home">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+          <path d="M10 36V12h5l9 11 9-11h5v24h-5V20l-9 11-9-11v16h-5Z"/>
+        </svg>
+        <span>Krishna Dwivedi</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/krishna-dwivedi-155a48345/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/krishna-dwivedi" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="eyebrow">B.Tech CSE – Data Science Student</div>
+          <h1>Building practical software with Python, JavaScript, and AI curiosity.</h1>
+          <p>Result-driven B.Tech Data Science student with strong foundations in Python, JavaScript, and MySQL. Hands-on experience building real-world applications with a focus on problem-solving and efficiency, while actively exploring Artificial Intelligence and Generative AI.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:krishnadwivedi3578@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="#projects">View Projects</a>
+          </div>
+        </div>
+        <aside class="hero-card reveal" aria-label="Profile summary">
+          <div>
+            <h3>Quick Snapshot</h3>
+            <p class="muted">Focused on software problem-solving, practical tools, and emerging AI workflows.</p>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>6th Sem</strong><span>Current semester</span></div>
+            <div class="stat"><strong>5.8</strong><span>Current CGPA</span></div>
+            <div class="stat"><strong>3rd Year</strong><span>Academic stage</span></div>
+            <div class="stat"><strong>3+</strong><span>Portfolio projects</span></div>
+          </div>
+          <div class="meta-list">
+            <div class="meta-item"><strong>Email</strong><span>krishnadwivedi3578@gmail.com</span></div>
+            <div class="meta-item"><strong>Phone</strong><span>9993048854</span></div>
+            <div class="meta-item"><strong>College</strong><span>ITM University, Gwalior</span></div>
+            <div class="meta-item"><strong>LinkedIn</strong><span><a href="https://www.linkedin.com/in/krishna-dwivedi-155a48345/" target="_blank" rel="noopener noreferrer">krishna-dwivedi-155a48345</a></span></div>
+            <div class="meta-item"><strong>GitHub</strong><span><a href="https://github.com/krishna-dwivedi" target="_blank" rel="noopener noreferrer">github.com/krishna-dwivedi</a></span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container section-grid">
+        <div class="span-8 card reveal">
+          <h2>About Me</h2>
+          <p class="muted">Krishna Dwivedi is a B.Tech Computer Science student specializing in Data Science, with an interest in building efficient applications and learning technologies that solve real problems. Current learning focus includes Artificial Intelligence and Generative AI, supported by a foundation in programming, databases, and structured problem-solving.</p>
+        </div>
+        <div class="span-4 card reveal">
+          <h2>Focus Areas</h2>
+          <div class="list">
+            <div>Python-based applications</div>
+            <div>Problem solving and DSA</div>
+            <div>Database-backed systems</div>
+            <div>AI and GenAI exploration</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container section-grid">
+        <div class="span-6 card reveal">
+          <h2>Education</h2>
+          <div class="project">
+            <h3>B.Tech in Computer Science (Data Science)</h3>
+            <p class="muted">ITM University, Gwalior</p>
+            <p class="muted">3rd Year · 6th Semester · Current CGPA: 5.8</p>
+          </div>
+        </div>
+        <div class="span-6 card reveal">
+          <h2>Strengths</h2>
+          <div class="list">
+            <div>Quick learner with strong technical curiosity</div>
+            <div>Hands-on approach toward building usable tools</div>
+            <div>Comfortable with logic-driven problem solving</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="reveal">Skills</h2>
+        <div class="section-grid">
+          <div class="span-4 card reveal">
+            <h3>Core Skills</h3>
+            <div class="badge-wrap" style="margin-top:1rem;">
+              <span class="badge">Data Structures & Algorithms</span>
+              <span class="badge">Problem Solving</span>
+            </div>
+          </div>
+          <div class="span-4 card reveal">
+            <h3>Languages</h3>
+            <div class="badge-wrap" style="margin-top:1rem;">
+              <span class="badge">Python</span>
+              <span class="badge">JavaScript</span>
+            </div>
+          </div>
+          <div class="span-4 card reveal">
+            <h3>Technologies</h3>
+            <div class="badge-wrap" style="margin-top:1rem;">
+              <span class="badge">MySQL</span>
+              <span class="badge">Artificial Intelligence</span>
+              <span class="badge">Generative AI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="reveal">Projects</h2>
+        <div class="project-grid">
+          <article class="card project reveal">
+            <span class="stack">Python · MySQL</span>
+            <h3>Smart Attendance System</h3>
+            <p>Built a practical attendance management solution using Python and MySQL to improve record handling and reduce manual effort.</p>
+          </article>
+          <article class="card project reveal">
+            <span class="stack">Python</span>
+            <h3>Screen Recorder Application</h3>
+            <p>Developed a desktop utility for screen recording with a focus on usability, efficiency, and real-world application value.</p>
+          </article>
+          <article class="card project reveal">
+            <span class="stack">Python · GenAI</span>
+            <h3>AI Text Assistant</h3>
+            <p>Suggested portfolio project centered on AI-assisted text generation and productivity workflows using Generative AI concepts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="certificates">
+      <div class="container section-grid">
+        <div class="span-12 card reveal">
+          <h2>Certificates</h2>
+          <div class="project" style="margin-top: 1rem;">
+            <span class="stack">EduSkills · AICTE · Alteryx Sparked</span>
+            <h3>Data Analytics Process Automation Virtual Internship</h3>
+            <p class="muted">Completed a 10-week virtual internship during April to June 2025 through EduSkills, with support from AICTE NEAT Cell and Alteryx Sparked. This certificate reflects structured learning exposure in data analytics and process automation.</p>
+            <p class="muted">Certificate ID: a50e956152b919a17d6d4a4155372c06 · Grade: A</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section-grid">
+        <div class="span-7 card reveal contact-box">
+          <h2>Contact</h2>
+          <p class="muted">Open to internships, student collaborations, and project opportunities related to software development, data science, and AI.</p>
+          <a class="contact-link" href="mailto:krishnadwivedi3578@gmail.com">krishnadwivedi3578@gmail.com</a>
+          <a class="contact-link" href="tel:9993048854">9993048854</a>
+          <a class="contact-link" href="https://www.linkedin.com/in/krishna-dwivedi-155a48345/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          <a class="contact-link" href="https://github.com/krishna-dwivedi" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        </div>
+        <div class="span-5 card reveal">
+          <h2>Next Step</h2>
+          <p class="muted">This portfolio can be expanded further with GitHub links, LinkedIn profile, certifications, internship history, and live project demos.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:krishnadwivedi3578@gmail.com">Start a Conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Krishna Dwivedi · Student Portfolio</div>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = 'light';
+      const setIcon = () => {
+        btn.innerHTML = theme === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        btn.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      };
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      setIcon();
+      btn.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        setIcon();
+      });
+      const items = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, {threshold: 0.12});
+      items.forEach(el => { if(!el.classList.contains('visible')) io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
